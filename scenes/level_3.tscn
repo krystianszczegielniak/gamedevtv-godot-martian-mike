@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2xg3fps2ctl2"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_ddov6"]
+[ext_resource type="PackedScene" uid="uid://c2mnl5quwexfx" path="res://scenes/bg.tscn" id="1_pi825"]
+[ext_resource type="PackedScene" uid="uid://cik32tc0j7ut4" path="res://scenes/player.tscn" id="2_ly1im"]
+[ext_resource type="PackedScene" uid="uid://cb2b41x047uge" path="res://scenes/start.tscn" id="3_4hkpg"]
+[ext_resource type="Texture2D" uid="uid://ef6ynk8aexlb" path="res://assets/textures/bg/Brown.png" id="3_vkcmg"]
+[ext_resource type="PackedScene" uid="uid://bqarq7yyam5be" path="res://scenes/exit.tscn" id="4_8rgby"]
+[ext_resource type="PackedScene" uid="uid://1spr7wy5gt22" path="res://scenes/ui_layer.tscn" id="4_gy3r2"]
+[ext_resource type="PackedScene" uid="uid://cphktmfo6quv7" path="res://scenes/tile_map.tscn" id="5_31igm"]
+[ext_resource type="PackedScene" uid="uid://cb2w7lkkgkr6f" path="res://scenes/deathzone.tscn" id="6_jwbfr"]
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource("1_ddov6")
+is_final_level = true
+
+[node name="BG" parent="." instance=ExtResource("1_pi825")]
+bg_texture = ExtResource("3_vkcmg")
+
+[node name="UILayer" parent="." instance=ExtResource("4_gy3r2")]
+
+[node name="Player" parent="." instance=ExtResource("2_ly1im")]
+
+[node name="Start" parent="." instance=ExtResource("3_4hkpg")]
+position = Vector2(136, 240)
+
+[node name="Exit" parent="." instance=ExtResource("4_8rgby")]
+position = Vector2(432, 240)
+
+[node name="TileMap" parent="." instance=ExtResource("5_31igm")]
+position = Vector2(272, -16)
+layer_0/tile_data = PackedInt32Array(1114136, 524288, 2, 1048600, 524288, 0, 1114135, 458752, 2, 1048599, 458752, 0, 1114134, 458752, 2, 1048598, 458752, 0, 1114133, 458752, 2, 1048597, 458752, 0, 1114132, 458752, 2, 1048596, 458752, 0, 1114131, 458752, 2, 1048595, 458752, 0, 1114130, 458752, 2, 1048594, 458752, 0, 1114129, 458752, 2, 1048593, 458752, 0, 1114128, 458752, 2, 1048592, 458752, 0, 1114127, 458752, 2, 1048591, 458752, 0, 1114126, 458752, 2, 1048590, 458752, 0, 1114125, 458752, 2, 1048589, 458752, 0, 1114124, 458752, 2, 1048588, 458752, 0, 1114123, 458752, 2, 1048587, 458752, 0, 1114122, 458752, 2, 1048586, 458752, 0, 1114121, 458752, 2, 1048585, 458752, 0, 1114120, 458752, 2, 1048584, 458752, 0, 1114119, 458752, 2, 1048583, 458752, 0, 1114118, 458752, 2, 1048582, 458752, 0, 1114117, 458752, 2, 1048581, 458752, 0, 1114116, 458752, 2, 1048580, 458752, 0, 1114115, 458752, 2, 1048579, 458752, 0, 1114114, 458752, 2, 1048578, 458752, 0, 1114113, 458752, 2, 1048577, 458752, 0, 1114112, 458752, 2, 1048576, 458752, 0, 1179647, 458752, 2, 1114111, 458752, 0, 1179646, 458752, 2, 1114110, 458752, 0, 1179645, 458752, 2, 1114109, 458752, 0, 1179644, 458752, 2, 1114108, 458752, 0, 1179643, 458752, 2, 1114107, 458752, 0, 1179642, 458752, 2, 1114106, 458752, 0, 1179641, 458752, 2, 1114105, 458752, 0, 1179640, 458752, 2, 1114104, 458752, 0, 1179639, 458752, 2, 1114103, 458752, 0, 1179638, 458752, 2, 1114102, 458752, 0, 1179637, 458752, 2, 1114101, 458752, 0, 1179636, 458752, 2, 1114100, 458752, 0, 1179635, 458752, 2, 1114099, 458752, 0, 1179634, 458752, 2, 1114098, 458752, 0, 1179633, 458752, 2, 1114097, 458752, 0, 1179632, 458752, 2, 1114096, 458752, 0, 1179631, 393216, 2, 1114095, 393216, 0)
+
+[node name="Deathzone" parent="." instance=ExtResource("6_jwbfr")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Traps" type="Node2D" parent="."]
